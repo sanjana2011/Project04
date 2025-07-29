@@ -51,7 +51,9 @@ public class TestCollege {
 
 	public static void testDelete() throws Exception {
 		CollegeModel model = new CollegeModel();
-		model.delete(2);
+		CollegeBean bean = new CollegeBean ();
+		bean.setId(2);
+		model.delete(bean);
 	}
 
 	public static void testFindByPk() throws Exception {

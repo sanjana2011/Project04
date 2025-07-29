@@ -51,7 +51,8 @@ public class TestMarksheet{
 
 	public static void testDelete() throws Exception {
 		MarksheetModel model = new MarksheetModel();
-		model.delete(3);
+		MarksheetBean  bean = new MarksheetBean();
+		model.delete(bean);
 	}
 
 	public static void testFindByPk() throws Exception {
@@ -81,7 +82,7 @@ public class TestMarksheet{
 
 		MarksheetModel model = new MarksheetModel();
 
-		MarksheetBean bean = model.findByRoll("BE101");
+		MarksheetBean bean = model.findByRollNo("BE101");
 
 		if (bean != null) {
 			System.out.print(bean.getId());

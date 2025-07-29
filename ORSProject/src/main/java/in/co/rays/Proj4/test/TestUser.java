@@ -57,7 +57,8 @@ public class TestUser {
 
 	public static void testDelete() throws Exception {
 		UserModel model = new UserModel();
-		model.delete(1);
+		UserBean bean  = new UserBean();
+		model.delete(bean);
 	}
 
 	public static void testFindByPk() throws Exception {

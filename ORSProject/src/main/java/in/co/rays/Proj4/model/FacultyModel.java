@@ -31,7 +31,7 @@ public class FacultyModel {
 	public void add(FacultyBean bean) throws Exception {
 
 		CollegeModel collegeModel = new CollegeModel();
-		CollegeBean collegeBean = collegeModel.findByPk(bean.getCollegeId());
+		CollegeBean collegeBean = collegeModel.findByPK(bean.getCollegeId());
 		bean.setCollegeName(collegeBean.getName());
 
 		CourseModel courseModel = new CourseModel();
@@ -83,7 +83,7 @@ public class FacultyModel {
 	public void update(FacultyBean bean) throws Exception {
 
 		CollegeModel collegeModel = new CollegeModel();
-		CollegeBean collegeBean = collegeModel.findByPk(bean.getCollegeId());
+		CollegeBean collegeBean = collegeModel.findByPK(bean.getCollegeId());
 		bean.setCollegeName(collegeBean.getName());
 
 		CourseModel courseModel = new CourseModel();

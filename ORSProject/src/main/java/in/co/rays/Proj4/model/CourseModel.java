@@ -1,11 +1,9 @@
 package in.co.rays.Proj4.model;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-
 import in.co.rays.Proj4.bean.CourseBean;
 import in.co.rays.Proj4.exception.DuplicateRecordException;
 import in.co.rays.Proj4.util.JDBCDataSource;

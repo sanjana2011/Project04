@@ -1,6 +1,5 @@
 package in.co.rays.Proj4.bean;
 
-
 public class MarksheetBean extends BaseBean {
 
 	private String rollNo;
@@ -60,13 +59,11 @@ public class MarksheetBean extends BaseBean {
 
 	@Override
 	public String getKey() {
-		// TODO Auto-generated method stub
-		return null;
+		return id + "";
 	}
 
 	@Override
 	public String getValue() {
-		// TODO Auto-generated method stub
-		return null;
+		return rollNo;
 	}
 }

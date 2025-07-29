@@ -134,7 +134,7 @@ public class UserModel {
 		}
 	}
 
-	public void delete(long id) throws ApplicationException {
+	public void delete(UserBean bean) throws ApplicationException {
 
 		Connection conn = null;
 
@@ -145,7 +145,7 @@ public class UserModel {
 
 			PreparedStatement pstmt = conn.prepareStatement("delete from st_user where id = ?");
 
-			pstmt.setLong(1, id);
+			pstmt.setLong(1, bean.getId());
 
 			int i = pstmt.executeUpdate();
 

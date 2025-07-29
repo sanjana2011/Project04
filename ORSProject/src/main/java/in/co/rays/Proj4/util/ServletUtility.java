@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import in.co.rays.Proj4.bean.BaseBean;
 import in.co.rays.Proj4.controller.BaseCtl;
+import in.co.rays.Proj4.exception.ApplicationException;
 
 
 public class ServletUtility {
@@ -109,4 +110,7 @@ public class ServletUtility {
 	public static int getPageSize(HttpServletRequest request) {
 		return (Integer) request.getAttribute("pageSize");
 	}
-}
+
+	
+		
+	}

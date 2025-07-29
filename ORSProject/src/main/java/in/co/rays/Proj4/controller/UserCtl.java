@@ -1,13 +1,10 @@
 package in.co.rays.Proj4.controller;
-
 import java.io.IOException;
 import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import in.co.rays.Proj4.bean.BaseBean;
 import in.co.rays.Proj4.bean.RoleBean;
 import in.co.rays.Proj4.bean.UserBean;
@@ -19,7 +16,6 @@ import in.co.rays.Proj4.util.DataUtility;
 import in.co.rays.Proj4.util.DataValidator;
 import in.co.rays.Proj4.util.PropertyReader;
 import in.co.rays.Proj4.util.ServletUtility;
-
 @WebServlet("/UserCtl")
 public class UserCtl extends BaseCtl {
 	@Override
@@ -147,6 +143,25 @@ public class UserCtl extends BaseCtl {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		String op = DataUtility.getString(request.getParameter("operation"));
+		
+		UserModel model = new UserModel();
+		
+		long id = DataUtility.getLong(request.getParameter("id"));
+		
+		if (id > 0 || op != null) {
+			
+			UserBean bean;
+			
+			try {
+				bean = model.findByPk(id);
+				ServletUtility.setBean(bean, request);
+					} catch (ApplicationException e) {
+						e.printStackTrace();
+				return;
+			}
+		}
 		ServletUtility.forward(getView(), request, response);
 	}
 
